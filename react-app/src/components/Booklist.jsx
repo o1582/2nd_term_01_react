@@ -24,11 +24,12 @@ const Booklist = (props) => {
       <ul>
         {
           // このあたり編集
+          // https://developers.google.com/books/docs/v1/using
           bookData === null ? (
             <p>now loading...</p>
           ) : (
             bookData.data.items.map((x, index) => (
-              <li key={index}>{x.volumeInfo.title}</li>
+              <li key={index}>【書籍名】{x.volumeInfo.title}　【著者】{x.volumeInfo.authors}</li>
             ))
           )
         }
